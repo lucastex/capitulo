@@ -39,6 +39,7 @@
 					<th>Endereço</th>
 					<th>Numero</th>
 					<th>Potência</th>
+					<th>Ações</th>
 				</tr>
 				<g:each in="${lojas}" var="l">
 					<tr>
@@ -47,6 +48,7 @@
 						<td>${l.endereco}</td>
 						<td>${l.numero}</td>
 						<td>${l.potencia}</td>
+						<td><g:link controller="loja" action="delete" id="${l.id}">Deletar</g:link></td>
 					</tr>
 				</g:each>
 			</table>

@@ -25,7 +25,7 @@ class LojaController {
 	def delete = {
 		def loja = Loja.get(params.id)
 		loja.delete()
-		flash.mensage = "Loja removida com sucesso"
+		flash.message = "Loja removida com sucesso"
 		redirect action: "index"
 	}
 }
