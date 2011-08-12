@@ -49,6 +49,7 @@
 					<th>Data de Elevacao</th>
 					<th>Data de Investidura</th>
 					<th>Data de Chevalier</th>
+					<th>Ações</th>
 				</tr>
 				<g:each in="${membros}" var="m">
 					<tr>
@@ -60,6 +61,7 @@
 						<td>${m.elevacao}</td>
 						<td>${m.investidura}</td>
 						<td>${m.chevalier}</td>
+						<td><g:link controller="membro" action="delete" id="${m.id}">Deletar</g:link></td>
 					</tr>
 				</g:each>
 			</table>
