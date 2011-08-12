@@ -20,7 +20,7 @@ class MembroController {
 	def delete = {
 		def membro = Membro.get(params.id)
 		membro.delete()
-		flash.mensage = "Membro removido com sucesso"
+		flash.message = "Membro removido com sucesso"
 		redirect action: "index"
 	}
 }
