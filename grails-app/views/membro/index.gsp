@@ -19,45 +19,53 @@
 			</p>
 			<p>
 				<label>Iniciacao</label>
-				<input type="text" name="iniciacao">
+				<g:datePicker name="iniciacao" precision="day" />
 			</p>
 			<p>
 				<label>Elevacao</label>
-				<input type="text" name="elevacao">
+				<g:datePicker name="elevacao" precision="day" />
 			</p>
 			<p>
 				<label>Investidura</label>
-				<input type="text" name="investidura">
+				<g:datePicker name="investidura" precision="day" />
 			</p>
 			<p>
 				<label>Chevalier</label>
-				<input type="text" name="chevalier">
+				<g:datePicker name="chevalier" precision="day" />
 			</p>
 			<p>
 				<input type="submit" value="cadastrar">
 			</p>
 			
 		</g:form>
-		<table border="1" width="100%">
-			<tr>
-				<th>#</th>
-				<th>Nome</th>
-				<th>E-mail</th>
-				<th>CID</th>
-				<th>Data de Iniciacao</th>
-				<th>Data de Elevacao</th>
-				<th>Data de Investidura</th>
-				<th>Data de Chevalier</th>
-			</tr>
-			<g:each in="${membros}" var="m">
-			<tr>
-				<td>${m.id}</td>
-				<td>${m.nome}</td>
-				<td>${m.endereco}</td>
-				<td>${m.numero}</td>
-				<td>${m.potencia}</td>
-			</tr>
-			</g:each>
-		</table>
+		<g:if test="${membros.size() > 0}">
+			<table border="1" width="100%">
+				<tr>
+					<th>#</th>
+					<th>Nome</th>
+					<th>E-mail</th>
+					<th>CID</th>
+					<th>Data de Iniciacao</th>
+					<th>Data de Elevacao</th>
+					<th>Data de Investidura</th>
+					<th>Data de Chevalier</th>
+				</tr>
+				<g:each in="${membros}" var="m">
+					<tr>
+						<td>${m.id}</td>
+						<td>${m.nome}</td>
+						<td>${m.email}</td>
+						<td>${m.cid}</td>
+						<td>${m.iniciacao}</td>
+						<td>${m.elevacao}</td>
+						<td>${m.investidura}</td>
+						<td>${m.chevalier}</td>
+					</tr>
+				</g:each>
+			</table>
+		</g:if>
+		<g:else>
+			<p>Não existem lojas cadastradas</p>
+		</g:else>
 	</body>
 </html>

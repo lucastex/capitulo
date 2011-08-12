@@ -21,7 +21,7 @@
 				<label>Potencia</label>
 				<select name="potencia">
 					<option value="GOB">GOB</option>
-					<option value="GOMAB">COMAB</option>
+					<option value="COMAB">COMAB</option>
 					<option value="GL">GL</option>
 				</select>
 			</p>
@@ -30,23 +30,30 @@
 			</p>
 			
 		</g:form>
-		<table border="1" width="100%">
-			<tr>
-				<th>#</th>
-				<th>Nome</th>
-				<th>Endereço</th>
-				<th>Numero</th>
-				<th>Potência</th>
-			</tr>
-			<g:each in="${lojas}" var="l">
-			<tr>
-				<td>${l.id}</td>
-				<td>${l.nome}</td>
-				<td>${l.endereco}</td>
-				<td>${l.numero}</td>
-				<td>${l.potencia}</td>
-			</tr>
-			</g:each>
-		</table>
+		
+		<g:if test="${lojas.size() > 0}">
+			<table border="1" width="100%">
+				<tr>
+					<th>#</th>
+					<th>Nome</th>
+					<th>Endereço</th>
+					<th>Numero</th>
+					<th>Potência</th>
+				</tr>
+				<g:each in="${lojas}" var="l">
+					<tr>
+						<td>${l.id}</td>
+						<td>${l.nome}</td>
+						<td>${l.endereco}</td>
+						<td>${l.numero}</td>
+						<td>${l.potencia}</td>
+					</tr>
+				</g:each>
+			</table>
+		</g:if>
+		<g:else>
+			<p>Não existem lojas cadastradas</p>
+		</g:else>
+		
 	</body>
 </html>
