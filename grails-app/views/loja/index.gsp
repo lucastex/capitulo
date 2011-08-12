@@ -25,7 +25,6 @@
 					<option value="GL">GL</option>
 				</select>
 			</p>
-			
 			<p>
 				<input type="submit" value="cadastrar">
 			</p>
