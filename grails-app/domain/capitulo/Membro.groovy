@@ -12,7 +12,7 @@ class Membro {
 	
     static constraints = {
 		nome(nullable: false, blank: false)
-		email(nullable: false, blank: false)
+		email(nullable: false, blank: false, email: true)
 		cid(nullable: false, blank: false, min: 0)
 		iniciacao(nullable: true, blank: true)
 		elevacao(nullable: true, blank: true)
