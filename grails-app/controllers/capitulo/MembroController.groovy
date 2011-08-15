@@ -6,6 +6,27 @@ class MembroController {
 		def allMembros = Membro.findAll()
 		[membros: allMembros]
 	}
+	
+	def load = {
+		def membro = Membro.get(params.id)
+		if(membro){
+			[membro: membro]
+		} else {
+			flash.message = "O membro não existe"
+			redirect action: "index"
+		}
+	}
+	
+	def update = {
+		def membro = Membro.get(params.id)
+		membro.properties = params
+		if(membro.save()){
+			flash.message = "Usuário atualizado com sucesso"
+		} else {
+			flashmessage = "Não foi possível atualizar o membro"
+		}
+		redirect action: "index"
+	}
 
 	def save = {
 		def membro = new Membro(params)
