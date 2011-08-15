@@ -57,10 +57,10 @@
 						<td>${m.nome}</td>
 						<td>${m.email}</td>
 						<td>${m.cid}</td>
-						<td>${m.iniciacao}</td>
-						<td>${m.elevacao}</td>
-						<td>${m.investidura}</td>
-						<td>${m.chevalier}</td>
+						<td><g:formatDate date="${m.iniciacao}" format="dd/MM/yyyy"/></td>
+						<td><g:formatDate date="${m.elevacao}" format="dd/MM/yyyy"/></td>
+						<td><g:formatDate date="${m.investidura}" format="dd/MM/yyyy"/></td>
+						<td><g:formatDate date="${m.chevalier}" format="dd/MM/yyyy"/></td>
 						<td><g:link controller="membro" action="delete" id="${m.id}">Deletar</g:link> | 
 							<g:link controller="membro" action="load" id="${m.id}">Editar</g:link></td>
 					</tr>
