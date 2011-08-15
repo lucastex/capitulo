@@ -9,6 +9,13 @@ class ReuniaoController {
 		[reunioes: allReunioes, gestoes: gestoes, lojas: lojas]
 	}
 	
+	def delete = {
+		def reuniao = Reuniao.get(params.id)
+		reuniao.delete()
+		flash.messagem = "Reunião deletada com sucesso"
+		redirect action: "index"
+	}
+	
 	def save = {
 		def reuniao = new Reuniao(params)
 		if(reuniao.save()){
