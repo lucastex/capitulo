@@ -4,7 +4,7 @@ class Presenca {
 	
 	Membro membro
 	Reuniao reuniao
-	String status
+	Boolean status
 
     static constraints = {
 		membro(nullable: false, blank: false)
