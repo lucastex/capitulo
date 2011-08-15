@@ -22,10 +22,16 @@ class GestaoController {
 	def update = {
 		def gestao = Gestao.get(params.id)
 		gestao.properties = params
-		if(gestao.save()){
-			flash.message = "Gestão atualizada com sucesso"
+		gestao.save()
+		redirect action: "index"
+	}
+	
+	def delete = {
+		def gestao = Gestao.get(params.id)
+		if(gestao.delete()){
+			flash.message = "Gestão deletada com sucesso"
 		} else {
-			flash.message = "Não foi possível atualizar a Gestão"
+			flash.message = "Ocorreu um erro ao deletar a Gestão"
 		}
 		redirect action: "index"
 	}
