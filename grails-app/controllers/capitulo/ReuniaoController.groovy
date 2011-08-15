@@ -12,7 +12,7 @@ class ReuniaoController {
 	def delete = {
 		def reuniao = Reuniao.get(params.id)
 		reuniao.delete()
-		flash.messagem = "Reunião deletada com sucesso"
+		flash.message = "Reunião deletada com sucesso"
 		redirect action: "index"
 	}
 	

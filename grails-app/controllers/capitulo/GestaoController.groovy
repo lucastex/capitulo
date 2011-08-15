@@ -28,11 +28,7 @@ class GestaoController {
 	
 	def delete = {
 		def gestao = Gestao.get(params.id)
-		if(gestao.delete()){
-			flash.message = "Gestão deletada com sucesso"
-		} else {
-			flash.message = "Ocorreu um erro ao deletar a Gestão"
-		}
+		flash.message = "Gestão deletada com sucesso"
 		redirect action: "index"
 	}
 	
