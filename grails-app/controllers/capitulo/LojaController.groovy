@@ -8,8 +8,29 @@ class LojaController {
     def index = { 
 		
 		def allLojas = Loja.findAll()
-		[lojas: allLojas]
+		[lojas: allLojas, loja: new Loja()]
 	
+	}
+	
+	def load = {
+		def loja = Loja.get(params.id)
+		if(loja){
+			[loja: loja]
+		}else{
+			flash.message = "A loja não existe"
+			redirect action: "index"
+		}
+	}
+	
+	def update = {
+		def loja = Loja.get(params.id)
+		loja.properties = params
+		if(loja.save()){
+			flash.message = "Loja atualizada com sucesso"
+		}else{
+			flash.message = "Ocorreu um erro ao atualizar a Loja"
+		}
+		redirect action: "index"
 	}
 	
 	def save = {
