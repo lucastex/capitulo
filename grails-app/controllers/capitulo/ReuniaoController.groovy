@@ -4,7 +4,9 @@ class ReuniaoController {
 
     def index = { 
 		def allReunioes = Reuniao.findAll()
-		[reunioes: allReunioes]
+		def gestoes = Gestao.findAll()
+		def lojas = Loja.findAll()
+		[reunioes: allReunioes, gestoes: gestoes, lojas: lojas]
 	}
 	
 	def save = {

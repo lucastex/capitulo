@@ -1,6 +1,6 @@
 <html>
 	<body>
-		<h1>Reuniões - ${reuniões.size()} cadastradas</h1>
+		<h1>Reuniões - ${reunioes.size()} cadastradas</h1>
 		<hr />
 		<h2>${flash.message}</h2>
 		<g:form controller="reuniao" action="save" method="get">
@@ -24,6 +24,9 @@
 					</g:each>
 				</select>
 			</p>
+			<p>
+				<input type="submit" value="cadastrar">
+			</p>
 			</g:form>
 			<g:if test="${reunioes.size() > 0}">
 				<table border="1" width="100%">
@@ -40,8 +43,8 @@
 							<td>${r.gestao.ano} - ${r.gestao.semestre}</td>
 							<td><g:formatDate date="${r.data}" format="dd/MM/yyyy"/></td>
 							<td>${r.loja.nome}</td>
-							<td><g:link controller="gestao" action="delete" id="${g.id}">Deletar</g:link> | 
-								<g:link controller="gestao" action="load" id="${g.id}">Editar</g:link></td>
+							<td><g:link controller="gestao" action="delete" id="${r.id}">Deletar</g:link> | 
+								<g:link controller="gestao" action="load" id="${r.id}">Editar</g:link></td>
 						</tr>
 					</g:each>
 				</table>
