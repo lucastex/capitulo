@@ -11,19 +11,34 @@
 			</p>
 			<p>
 				<label>Semestre</label>
-				<input type="text" name="semestre">
+				<select name="semestre">
+					<option value="01">01 | Janeiro - Junho</option>
+					<option value="02">02 | Julho - Dezembro</option>
+				</select>
 			</p>
 			<p>
 				<label>MC</label>
-				<input type="text" name="mc">
+				<select name="mmc.id">
+					<g:each in="${membros}" var="m">
+						<option value="${m.id}">${m.nome}</option>
+					</g:each>
+				</select>
 			</p>
 			<p>
 				<label>1C</label>
-				<input type="text" name="1c">
+				<select name="m1c.id">
+					<g:each in="${membros}" var="m">
+						<option value="${m.id}">${m.nome}</option>
+					</g:each>
+				</select>
 			</p>
 			<p>
 				<label>2C</label>
-				<input type="text" name="2c">
+				<select name="m2c.id">
+					<g:each in="${membros}" var="m">
+						<option value="${m.id}">${m.nome}</option>
+					</g:each>
+				</select>
 			</p>
 			<p>
 				<input type="submit" value="cadastrar">
@@ -49,8 +64,8 @@
 						<td>${g.mmc}</td>
 						<td>${g.m1c}</td>
 						<td>${g.m2c}</td>
-						<td><g:link controller="gestao" action="delete" id="${m.id}">Deletar</g:link> | 
-							<g:link controller="gestao" action="load" id="${m.id}">Editar</g:link></td>
+						<td><g:link controller="gestao" action="delete" id="${g.id}">Deletar</g:link> | 
+							<g:link controller="gestao" action="load" id="${g.id}">Editar</g:link></td>
 					</tr>
 				</g:each>
 			</table>

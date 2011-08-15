@@ -10,7 +10,7 @@ class Gestao {
 
     static constraints = {
 		ano(nullable:false, blank:false)
-		semstre(nullable:false, blank:false)
+		semestre(nullable:false, blank:false)
 		mmc(nullable:false, blank:false)
 		m1c(nullable:false, blank:false)
 		m2c(nullable:false, blank:false)
