@@ -13,7 +13,7 @@
 				</select>
 			</p>
 			<p>
-				<label>Gestão</label>
+				<label>Data</label>
 				<g:datePicker name="data" precision="day" />
 			</p>
 			<p>

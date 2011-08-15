@@ -6,12 +6,15 @@
 		<g:form controller="presenca" action="save" method="post">
 			<input type="hidden" name="reuniao" value="${reuniao.id}">
 			<g:each in="${membros}" var="m">
-				<input type="checkbox" name="membro_${m.id}" value="true" />${m.nome}<br>
+				<input type="checkbox" <g:if test="${presentes.membro.id.contains(m.id)}">checked</g:if> name="membro_${m.id}" value="true" />${m.nome}<br>
 			</g:each>
 			<p>
 				<input type="submit" value="salvar">
 			</p>
 		</g:form>
-		<i>Marque os membros presentes</i>
+		<em>Marque os membros presentes</em>
+		<br />
+		<g:link controller="reuniao" action="index">Voltar</g:link>
+		
 	</body>
 </html>
