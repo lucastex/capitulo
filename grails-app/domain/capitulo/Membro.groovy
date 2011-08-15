@@ -19,4 +19,8 @@ class Membro {
 		investidura(nullable: true, blank: true)
 		chevalier(nullable: true, blank: true)
     }
+
+	String toString() {
+		"$cid - $nome"
+	}
 }
