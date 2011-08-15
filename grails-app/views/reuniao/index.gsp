@@ -44,7 +44,8 @@
 						<td><g:formatDate date="${r.data}" format="dd/MM/yyyy"/></td>
 						<td>${r.loja.nome}</td>
 						<td><g:link controller="reuniao" action="delete" id="${r.id}">Deletar</g:link> | 
-							<g:link controller="reuniao" action="load" id="${r.id}">Editar</g:link></td>
+							<g:link controller="reuniao" action="load" id="${r.id}">Editar</g:link> | 
+							<g:link controller="presenca" action="load" id="${r.id}">Presenca</g:link></td>
 					</tr>
 				</g:each>
 			</table>
