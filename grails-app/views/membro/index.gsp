@@ -61,7 +61,8 @@
 						<td>${m.elevacao}</td>
 						<td>${m.investidura}</td>
 						<td>${m.chevalier}</td>
-						<td><g:link controller="membro" action="delete" id="${m.id}">Deletar</g:link></td>
+						<td><g:link controller="membro" action="delete" id="${m.id}">Deletar</g:link> | 
+							<g:link controller="membro" action="load" id="${m.id}">Editar</g:link></td>
 					</tr>
 				</g:each>
 			</table>
