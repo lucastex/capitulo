@@ -25,4 +25,24 @@ class ReuniaoController {
 		}
 		redirect action: "index"
 	}
+	
+	def load = {
+		def reuniao = Reuniao.get(params.id)
+		def gestao = Gestao.findAll()
+		def loja = Loja.findAll()
+		if(reuniao){
+			[reuniao: reuniao, gestao: gestao, loja: loja]
+		}
+	}
+	
+	def upload = {
+		def reuniao = Reuniao.get(params.id)
+		reuniao.properties = params
+		if(reuniao.save()){
+			flash.message = "Reunião alterada com sucesso"
+		} else {
+			flash.message = "Erro ao alterar a reunião"
+		}
+		redirect action: "index"
+	}
 }
