@@ -4,9 +4,9 @@ class Gestao {
 	
 	Integer ano
 	Integer semestre
-	Integer mmc
-	Integer m1c
-	Integer m2c
+	Membro mmc
+	Membro m1c
+	Membro m2c
 
     static constraints = {
 		ano(nullable:false blank:false)

@@ -46,9 +46,9 @@
 						<td>${g.id}</td>
 						<td>${g.ano}</td>
 						<td>${g.semestre}</td>
-						<td>${g.mc}</td>
-						<td>${g.1c}</td>
-						<td>${g.2c}</td>
+						<td>${g.mmc}</td>
+						<td>${g.m1c}</td>
+						<td>${g.m2c}</td>
 						<td><g:link controller="gestao" action="delete" id="${m.id}">Deletar</g:link> | 
 							<g:link controller="gestao" action="load" id="${m.id}">Editar</g:link></td>
 					</tr>
