@@ -23,15 +23,15 @@
 			</p>
 			<p>
 				<label>Elevacao</label>
-				<g:datePicker name="elevacao" precision="day"  value="${membro.elevacao}"/>
+				<g:datePicker name="elevacao" precision="day"  value="${membro.elevacao}" noSelection="['':'Não possui elevação']"/>
 			</p>
 			<p>
 				<label>Investidura</label>
-				<g:datePicker name="investidura" precision="day"  value="${membro.investidura}"/>
+				<g:datePicker name="investidura" precision="day"  value="${membro.investidura}" noSelection="['':'Não possui investidura']"/>
 			</p>
 			<p>
 				<label>Chevalier</label>
-				<g:datePicker name="chevalier" precision="day"  value="${membro.chevalier}"/>
+				<g:datePicker name="chevalier" precision="day"  value="${membro.chevalier}" noSelection="['':'Não possui chevalier']"/>
 			</p>
 			<p>
 				<input type="submit" value="atualizar">

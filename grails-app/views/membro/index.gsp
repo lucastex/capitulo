@@ -19,19 +19,19 @@
 			</p>
 			<p>
 				<label>Iniciacao</label>
-				<g:datePicker name="iniciacao" precision="day" />
+				<g:datePicker name="iniciacao" precision="day"/>
 			</p>
 			<p>
 				<label>Elevacao</label>
-				<g:datePicker name="elevacao" precision="day" />
+				<g:datePicker name="elevacao" precision="day"  noSelection="['':'Não possui elevação']"/>
 			</p>
 			<p>
 				<label>Investidura</label>
-				<g:datePicker name="investidura" precision="day" />
+				<g:datePicker name="investidura" precision="day"  noSelection="['':'Não possui investidura']"/>
 			</p>
 			<p>
 				<label>Chevalier</label>
-				<g:datePicker name="chevalier" precision="day" />
+				<g:datePicker name="chevalier" precision="day"  noSelection="['':'Não possui chevalier']"/>
 			</p>
 			<p>
 				<input type="submit" value="cadastrar">
