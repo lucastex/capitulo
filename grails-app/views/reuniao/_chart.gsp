@@ -8,12 +8,7 @@
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Ano');
         data.addColumn('number', 'Presentes');
-        data.addRows([
-          ['12/01', 1000],
-          ['13/04', 1170],
-          ['15/05', 660],
-          ['02/01', 1030]
-        ]);
+        data.addRows(${listaPresenca});
 
         var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
         chart.draw(data, {width: 1000, height: 240, title: 'Relatório de Presença',

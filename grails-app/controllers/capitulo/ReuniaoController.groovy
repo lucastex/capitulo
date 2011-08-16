@@ -6,7 +6,13 @@ class ReuniaoController {
 		def allReunioes = Reuniao.findAll()
 		def gestoes = Gestao.findAll()
 		def lojas = Loja.findAll()
-		[reunioes: allReunioes, gestoes: gestoes, lojas: lojas]
+		def listaPresenca = []
+		allReunioes.each{ r ->
+			def numeroDePresentes = Presenca.countByReuniaoAndStatus(r,true)			
+			listaPresenca << ["'${r.data.format("dd/MM/yyyy")}'", numeroDePresentes]
+		}
+		println listaPresenca
+		[reunioes: allReunioes, gestoes: gestoes, lojas: lojas, listaPresenca: listaPresenca]
 	}
 	
 	def delete = {
