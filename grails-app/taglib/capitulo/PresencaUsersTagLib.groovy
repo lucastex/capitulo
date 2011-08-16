@@ -29,16 +29,78 @@ class PresencaUsersTagLib {
 			def resposta = ""
 			
 			if (totalReunioes > 0) {
-				resposta = ((contadorDePresencas*100)/totalReunioes)
+				resposta = "${((contadorDePresencas*100)/totalReunioes)}%"
 			} else {
 				resposta = "-"
 			}
 			
-			out << "${resposta}%"
+			out << resposta
 			
 		} else {
 			out << "ERRO"
 		}
 	}
+	
+	
+	
+	
+	def membrosPresentes = { attrs, body ->
+		
+		def contadorMembros = 0
+		
+		def gestao 	= attrs.remove('gestao')
+		def reuniao = attrs.remove('reuniao')
+		
+		gestao.reunioes.each { reuniaoEach ->
+			if (reuniaoEach.id == reuniao.id) {
+				reuniaoEach.presenca.each { presenca ->
+					if (presenca.status) {
+						contadorMembros++
+					}
+				}
+			}
+			
+		}
+					
+		out << contadorMembros
+		
+
+	}
+	
+	
+	
+	def porcentagemPresentes = { attrs, body ->
+		
+		def totalMembros = 0
+		def contadorMembros = 0
+		
+		def gestao 	= attrs.remove('gestao')
+		def reuniao = attrs.remove('reuniao')
+				
+		gestao.reunioes.each { reuniaoEach ->
+			
+			if (reuniaoEach.id == reuniao.id) {
+				reuniaoEach.presenca.each { presenca ->
+					
+					totalMembros++
+					
+					if (presenca.status) {
+						contadorMembros++
+					}
+					
+				}
+			}
+			
+		}
+		
+		def resultado = ((contadorMembros*100)/totalMembros) 
+		
+		out << resultado
+		
+	}
+	
+	
+	
+	
 
 }

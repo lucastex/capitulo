@@ -32,17 +32,19 @@
 							<td align="center">-</td>
 						</g:if>
 					</g:each>
-					<td><capitulo:porcentagem gestao="${gestao}" membro="${membro}"/></td>
+					<td><capitulo:porcentagem gestao="${gestao}" membro="${membro}" /></td>
 				</tr>
 			</g:each>			
 				<td rowspan="2">TOTAL</td>
-				<td>3 membros</td>
-				<td>9 membros</td>
+				<g:each in="${gestao.reunioes}" var="reuniao">
+					<td><capitulo:membrosPresentes gestao="${gestao}" reuniao="${reuniao}" /> presentes</td>
+				</g:each>
 				<td rowspan="2">&nbsp;</td>
 			</tr>
 			<tr>
-				<td>30% presentes</td>
-				<td>50% presentes</td>
+				<g:each in="${gestao.reunioes}" var="reuniao">
+					<td><capitulo:porcentagemPresentes gestao="${gestao}" reuniao="${reuniao}" />%</td>
+				</g:each>
 			</tr>
 		</table>
 		</g:each>		
