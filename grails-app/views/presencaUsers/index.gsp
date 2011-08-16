@@ -32,7 +32,7 @@
 							<td align="center">-</td>
 						</g:if>
 					</g:each>
-					<td>98%</td>
+					<td><capitulo:porcentagem gestao="${gestao}" membro="${membro}"/></td>
 				</tr>
 			</g:each>			
 				<td rowspan="2">TOTAL</td>
