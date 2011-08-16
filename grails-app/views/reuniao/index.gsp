@@ -53,5 +53,6 @@
 		<g:else>
 			<p>Não existem Reuniões cadastradas</p>
 		</g:else>
+		<g:render template="chart" />
 	</body>
 </html>
