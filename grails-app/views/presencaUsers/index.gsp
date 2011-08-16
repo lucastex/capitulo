@@ -2,8 +2,6 @@
 	<body>
 		<h1>Relatório de Presença de Usuários</h1>
 		<hr />
-		<h2>${flash.message}</h2>
-		<hr />
 		<g:each in="${gestoes}" var="gestao">
 		<div align="center"><h2>Gestão ${gestao.ano}/${gestao.semestre}</h2></div>
 		<table border="1" width="100%">
