@@ -13,9 +13,8 @@ class PresencaController {
 	def save = {
 		
 		//apaga registros antigos
-		def presentes = Presenca.findAllByReuniaoAndStatus(Reuniao.load(params.reuniao),true)
-		presentes.each { r ->
-			
+		def presentesAp = Presenca.findAllByReuniao(Reuniao.load(params.reuniao))
+		presentesAp.each { r ->
 			r.delete()
 		}
 		
@@ -36,6 +35,7 @@ class PresencaController {
 		}
 		
 		def allMembros = Membro.findAll()
+		def presentes = Presenca.findAllByReuniaoAndStatus(Reuniao.load(params.reuniao),true)
 		allMembros.each { m ->
 			if(!presentes.membro.id.contains(m.id)){
 				def presenca = new Presenca()

@@ -7,6 +7,9 @@ class Gestao {
 	Membro mmc
 	Membro m1c
 	Membro m2c
+	
+	static hasMany  = [reunioes: Reuniao]
+	static mappedBy = [reunioes: 'gestao']
 
     static constraints = {
 		ano(nullable:false, blank:false)
@@ -15,4 +18,8 @@ class Gestao {
 		m1c(nullable:false, blank:false)
 		m2c(nullable:false, blank:false)
     }
+
+	static mapping = {
+		reunioes sort: 'data'
+	}
 }
