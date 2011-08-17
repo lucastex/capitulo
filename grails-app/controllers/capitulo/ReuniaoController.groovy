@@ -1,5 +1,6 @@
 package capitulo
 
+/* Controller que controla o cadastro das reunioes do capitulo */ 
 class ReuniaoController {
 
     def index = { 

@@ -1,5 +1,6 @@
 package capitulo
 
+/* Controller das presencas */
 class PresencaController {
 
     def index = { 
