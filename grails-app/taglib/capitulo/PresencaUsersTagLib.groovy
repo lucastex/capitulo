@@ -77,20 +77,13 @@ class PresencaUsersTagLib {
 		def gestao 	= attrs.remove('gestao')
 		def reuniao = attrs.remove('reuniao')
 				
-		gestao.reunioes.each { reuniaoEach ->
+		gestao.reunioes.find { it.id == reuniao.id }.presenca.each { presenca ->
 			
-			if (reuniaoEach.id == reuniao.id) {
-				reuniaoEach.presenca.each { presenca ->
-					
-					totalMembros++
-					
-					if (presenca.status) {
-						contadorMembros++
-					}
-					
-				}
+			totalMembros++
+			
+			if (presenca.status) {
+				contadorMembros++
 			}
-			
 		}
 		
 		def resultado = ((contadorMembros*100)/totalMembros) 
