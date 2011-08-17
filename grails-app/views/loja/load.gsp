@@ -29,5 +29,6 @@
 				<input type="submit" value="atualizar">
 			</p>
 		</g:form>
+		<g:render template="../toolbar" />
 	</body>
 </html>

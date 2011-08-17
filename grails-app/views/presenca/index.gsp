@@ -15,6 +15,6 @@
 		<em>Marque os membros presentes</em>
 		<br />
 		<g:link controller="reuniao" action="index">Voltar</g:link>
-		
+		<g:render template="../toolbar" />
 	</body>
 </html>

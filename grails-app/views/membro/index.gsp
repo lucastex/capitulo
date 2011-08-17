@@ -70,5 +70,6 @@
 		<g:else>
 			<p>Não existem lojas cadastradas</p>
 		</g:else>
+		<g:render template="../toolbar" />
 	</body>
 </html>

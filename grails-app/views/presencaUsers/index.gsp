@@ -46,5 +46,6 @@
 			</tr>
 		</table>
 		</g:each>		
+		<g:render template="../toolbar" />
 	</body>
 </html>
