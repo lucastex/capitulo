@@ -1,4 +1,7 @@
 <html>
+	<head>
+		<link rel="stylesheet" href="${resource(dir:'css',file:'css.css')}" type="text/css" media="all" />
+	</head>
 	<body>
 		<h1>Lista de Presença - <g:formatDate date="${reuniao.data}" format="dd/MM/yyyy"/></h1>
 		<hr />

@@ -1,4 +1,7 @@
 <html>
+	<head>
+		<link rel="stylesheet" href="${resource(dir:'css',file:'css.css')}" type="text/css" media="all" />
+	</head>
 	<body>
 		<h1>Membros - ${membros.size()} cadastrados</h1>
 		<hr />

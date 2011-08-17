@@ -1,9 +1,7 @@
 <br />
-<br />
-<hr />
 <table border="0" width="100%">
 	<tr align="center">
-		<th colspan="4">Painel de Navegação</th>
+		<th colspan="4"><h2>Painel de Navegação</h2></th>
 	</tr>
 	<tr align="center">
 		<th><g:link controller="membro" action="index">
