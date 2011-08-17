@@ -1,3 +1,12 @@
+hr {
+      border-top: 1px dashed #333;
+      border-bottom: 1px solid #333;
+      color: #fff;
+      background-color: #fff;
+      height: 3px;
+}
+
+
 /* 
 	Web20 Table Style
 	written by Netway Media, http://www.netway-media.com
@@ -19,7 +28,7 @@ caption {
   text-transform: uppercase;
 }
 thead, tfoot {
-background:url(bg1.png) repeat-x;
+background:url('http://www.netway-media.com/freedesigns/table/bg1.png') repeat-x;
 text-align:left;
 height:30px;
 }

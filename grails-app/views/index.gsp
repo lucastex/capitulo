@@ -96,6 +96,6 @@
                 </ul>
             </div>
         </div>
-    	<g:render template="../toolbar" />
+    	<g:render template="/templates/toolbar" />
 	</body>
 </html>

@@ -76,6 +76,6 @@
 		<g:else>
 			<p>Não existem Gestões cadastradas</p>
 		</g:else>
-		<g:render template="../toolbar" />
+		<g:render template="/templates/toolbar" />
 	</body>
 </html>

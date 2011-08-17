@@ -41,6 +41,6 @@
 			</p>
 			
 		</g:form>
-		<g:render template="../toolbar" />
+		<g:render template="/templates/toolbar" />
 	</body>
 </html>

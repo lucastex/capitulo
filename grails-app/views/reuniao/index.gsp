@@ -32,31 +32,37 @@
 			</p>
 		</g:form>
 		<g:if test="${reunioes.size() > 0}">
-			<table border="1" width="100%">
-				<tr>
-					<th>#</th>
-					<th>Gestão</th>
-					<th>Data</th>
-					<th>Loja</th>
-					<th>Ações</th>
-				</tr>
-				<g:each in="${reunioes}" var="r">
+			<table width="100%">
+				<thead>
 					<tr>
-						<td>${r.id}</td>
-						<td>${r.gestao.ano} - ${r.gestao.semestre}</td>
-						<td><g:formatDate date="${r.data}" format="dd/MM/yyyy"/></td>
-						<td>${r.loja.nome}</td>
-						<td><g:link controller="reuniao" action="delete" id="${r.id}">Deletar</g:link> | 
-							<g:link controller="reuniao" action="load" id="${r.id}">Editar</g:link> | 
-							<g:link controller="presenca" action="index" id="${r.id}">Presenca</g:link></td>
+						<th scope="col">#</th>
+						<th>Gestão</th>
+						<th>Data</th>
+						<th>Loja</th>
+						<th>Ações</th>
 					</tr>
-				</g:each>
+				</thead>
+				<tbody>
+					<g:each in="${reunioes}" var="r" status="st">
+						<tr ${(st % 2 == 0) ? 'class="odd"' : ''}>
+							<td>${r.id}</td>
+							<td>${r.gestao.ano} - ${r.gestao.semestre}</td>
+							<td><g:formatDate date="${r.data}" format="dd/MM/yyyy"/></td>
+							<td>${r.loja.nome}</td>
+							<td>
+								<g:link controller="reuniao" action="delete" id="${r.id}">Deletar</g:link> | 
+								<g:link controller="reuniao" action="load" id="${r.id}">Editar</g:link> | 
+								<g:link controller="presenca" action="index" id="${r.id}">Presenca</g:link>
+							</td>
+						</tr>
+					</g:each>
+				<tbody>
 			</table>
 		</g:if>
 		<g:else>
 			<p>Não existem Reuniões cadastradas</p>
 		</g:else>
 		<g:render template="chart" />
-		<g:render template="../toolbar" />
+		<g:render template="/templates/toolbar" />
 	</body>
 </html>

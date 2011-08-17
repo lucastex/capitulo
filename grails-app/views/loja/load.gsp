@@ -32,6 +32,6 @@
 				<input type="submit" value="atualizar">
 			</p>
 		</g:form>
-		<g:render template="../toolbar" />
+		<g:render template="/templates/toolbar" />
 	</body>
 </html>
